@@ -1,0 +1,265 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE TEMA (Cores do Corinthians: Preto, Branco e Vermelho)
+   ========================================================================== */
+
+/* Tema Claro (Foco no Branco, textos Pretos e detalhes Vermelhos) */
+:root {
+    --bg-color: #f4f4f4;
+    /* Fundo cinza bem clarinho para dar contraste */
+    --surface-color: #ffffff;
+    /* Fundo branco puro para os cartões */
+    --text-primary: #000000;
+    /* Preto absoluto para o texto */
+    --text-secondary: #444444;
+    /* Cinza escuro para textos secundários */
+    --primary-color: #cf0815;
+    /* Vermelho vibrante (Corinthians) para links e destaques */
+    --border-color: #000000;
+    /* Bordas pretas para um visual mais marcante */
+}
+
+/* Tema Escuro (Foco no Preto absoluto, textos Brancos e detalhes Vermelhos) */
+[data-theme="dark"] {
+    --bg-color: #000000;
+    /* Fundo preto puro */
+    --surface-color: #111111;
+    /* Preto um pouco mais claro para separar os elementos */
+    --text-primary: #ffffff;
+    /* Branco puro para o texto brilhar no fundo preto */
+    --text-secondary: #cccccc;
+    /* Cinza claro para textos secundários */
+    --primary-color: #cf0815;
+    /* O mesmo vermelho vibrante mantendo a identidade */
+    --border-color: #cf0815;
+    /* Bordas vermelhas no tema escuro ficam incríveis */
+}
+
+/* ==========================================================================
+   2. RESET BÁSICO E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+html {
+    /* 1. Faz a página deslizar suavemente até a seção em vez de pular direto */
+    scroll-behavior: smooth;
+
+    /* 2. Dá um "desconto" de 100 pixels no topo para o menu não cobrir o título da seção */
+    scroll-padding-top: 100px;
+}
+
+/* ==========================================================================
+   3. BARRA DE NAVEGAÇÃO SUPERIOR (<nav>)
+   ========================================================================== */
+nav {
+    background-color: var(--surface-color);
+    border-bottom: 3px solid var(--primary-color);
+    /* Uma faixa vermelha no topo para dar estilo */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-brand h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    /* Deixa o nome todo em MAIÚSCULO para dar peso */
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: bold;
+    /* Links mais gordinhos */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   4. LAYOUT PRINCIPAL
+   ========================================================================== */
+.layout-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* ==========================================================================
+   5. BARRA LATERAL (Perfil / Aside)
+   ========================================================================== */
+aside {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    /* Bordas um pouco mais quadradas, visual mais agressivo */
+    border: 1px solid var(--border-color);
+    /* Linha ao redor do perfil */
+    height: fit-content;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    /* Deixei 8px para dar uma leve suavizada nas quinas (combina com os cartões). Se quiser um quadrado "seco", troque para 0 */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem;
+    border: 4px solid var(--primary-color);
+}
+
+.profile h2 {
+    text-align: center;
+    font-weight: 800;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    /* Subtítulo em vermelho */
+}
+
+.contact a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.contact a:hover {
+    color: var(--primary-color);
+}
+
+.location {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   6. CONTEÚDO PRINCIPAL E SEÇÕES (Main)
+   ========================================================================== */
+section {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+section h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    /* Linha vermelha grossa abaixo dos títulos */
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.timeline-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--primary-color);
+    /* Linha vermelha do lado da experiência */
+}
+
+.timeline-item h3 {
+    color: var(--text-primary);
+}
+
+.company,
+.institution {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   7. RODAPÉ
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    background-color: var(--surface-color);
+    border-top: 3px solid var(--primary-color);
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (Celular)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
