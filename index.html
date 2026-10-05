@@ -24,6 +24,7 @@
                 <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
                 <li><a href="#idiomas" class="nav-link">Idiomas</a></li>
                 <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
             <button class="theme-toggle" aria-label="Alternar Tema">☀️</button>
         </div>
@@ -46,7 +47,7 @@
                     Entusiasta de tecnologia, redes, automação e infraestrutura. Desenvolvendo soluções inteligentes e projetos de robótica no IFSULDEMINAS.
                 </p>
                 <div class="hero-buttons">
-                    <a href="mailto:hudwoody12@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Fale Comigo</a>
+                    <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Fale Comigo</a>
                     <a href="https://github.com/HudsonLopes12" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
             </div>
@@ -152,6 +153,48 @@
                         <span class="project-tag">Avaliação</span>
                     </div>
                 </div>
+            </section>
+
+            <!-- SEÇÃO PREPARE UMA MENSAGEM (FORMULÁRIO DE CONTATO) -->
+            <section id="contato" class="card-section">
+                <h2><i class="fa-solid fa-paper-plane"></i> Prepare uma mensagem</h2>
+                <p class="form-instruction">
+                    Demonstração de formulário: os campos são validados no navegador. O site não envia nem armazena mensagens. Ao final, você poderá abrir um rascunho no seu aplicativo de e-mail.
+                </p>
+
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">NOME</label>
+                            <input type="text" id="nome" placeholder="Como você se chama?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-MAIL</label>
+                            <input type="email" id="email" placeholder="voce@exemplo.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">ASSUNTO</label>
+                        <select id="assunto" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="Oportunidade de Trabalho">Oportunidade de Trabalho</option>
+                            <option value="Projeto / Freelance">Projeto / Freelance</option>
+                            <option value="Dúvida / Informação">Dúvida / Informação</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">MENSAGEM</label>
+                        <textarea id="mensagem" rows="5" maxlength="2000" placeholder="Conte um pouco sobre a oportunidade ou o projeto." required></textarea>
+                        <div class="char-count"><span id="charCount">0</span> / 2000 caracteres</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        Preparar e-mail <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                </form>
             </section>
         </main>
     </div>

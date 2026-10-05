@@ -12,6 +12,7 @@
     --border-color: #30363d;
     --accent-glow: rgba(225, 29, 72, 0.35);
     --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --input-bg: #161b22;
 }
 
 [data-theme="light"] {
@@ -25,6 +26,7 @@
     --border-color: #d0d7de;
     --accent-glow: rgba(225, 29, 72, 0.15);
     --card-shadow: 0 8px 24px rgba(140, 149, 159, 0.15);
+    --input-bg: #f3f4f6;
 }
 
 * {
@@ -215,6 +217,7 @@ nav {
     transition: all 0.25s ease;
     border: none;
     box-shadow: var(--card-shadow);
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -502,6 +505,70 @@ aside h3 {
     letter-spacing: 0.5px;
 }
 
+/* FORMULÁRIO DE CONTATO */
+.form-instruction {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    letter-spacing: 0.8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.char-count {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.3rem;
+}
+
+.btn-submit {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
 /* BOTÃO VOLTAR AO TOPO (FLUTUANTE) */
 .back-to-top {
     position: fixed;
@@ -559,6 +626,10 @@ footer {
 
     aside .info-card {
         position: static;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
     }
 }
 

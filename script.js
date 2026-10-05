@@ -58,3 +58,33 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// 4. CONTADOR DE CARACTERES
+const mensagemInput = document.getElementById('mensagem');
+const charCount = document.getElementById('charCount');
+
+if (mensagemInput && charCount) {
+    mensagemInput.addEventListener('input', () => {
+        charCount.textContent = mensagemInput.value.length;
+    });
+}
+
+// 5. ENVIO DO FORMULÁRIO (GERAR RASCUNHO DE E-MAIL)
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const assunto = document.getElementById('assunto').value;
+        const mensagem = document.getElementById('mensagem').value;
+
+        const meuEmail = 'hudwoody12@gmail.com';
+        const subject = encodeURIComponent(`[Contato Site] ${assunto} - ${nome}`);
+        const body = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\nAssunto: ${assunto}\n\nMensagem:\n${mensagem}`);
+
+        window.location.href = `mailto:${meuEmail}?subject=${subject}&body=${body}`;
+    });
+}
