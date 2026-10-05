@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hudson Lopes | Desenvolvedor & Sistemas de Informação</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body data-theme="dark">
 
+    <!-- NAVBAR -->
     <nav id="nav">
         <div class="nav-container">
             <div class="nav-brand">
@@ -22,14 +24,17 @@
                 <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
                 <li><a href="#projetos" class="nav-link">Projetos</a></li>
             </ul>
-            <button class="theme-toggle">☀️</button>
+            <button class="theme-toggle" aria-label="Alternar Tema">☀️</button>
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <header class="hero-section">
         <div class="hero-container">
             <div class="hero-avatar">
-                <img src="Hudson-Foto-Perfil.png" alt="Foto de Hudson Lopes">
+                <div class="avatar-wrapper">
+                    <img src="Hudson-Foto-Perfil.png" alt="Foto de Hudson Lopes">
+                </div>
                 <span class="status-badge"><i class="fa-solid fa-circle"></i> Disponível para oportunidades</span>
             </div>
             <div class="hero-content">
@@ -37,25 +42,27 @@
                 <h1 class="hero-title">Hudson Mauro Lopes Filho</h1>
                 <h2 class="hero-subtitle">Estudante de Sistemas de Informação & Dev Back-End</h2>
                 <p class="hero-description">
-                    Entusiasta de tecnologia, redes, automação e infraestrutura. Desenvolvendo soluções no IFSULDEMINAS.
+                    Entusiasta de tecnologia, redes, automação e infraestrutura. Desenvolvendo soluções inteligentes e projetos de robótica no IFSULDEMINAS.
                 </p>
                 <div class="hero-buttons">
                     <a href="mailto:hudwoody12@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Fale Comigo</a>
-                    <a href="https://github.com/HudsonLopes12" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://github.com/HudsonLopes12" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- LAYOUT PRINCIPAL -->
     <div class="layout-container">
+        <!-- BARRA LATERAL -->
         <aside>
             <div class="info-card">
-                <h3><i class="fa-solid fa-address-card"></i> Contato</h3>
+                <h3><i class="fa-solid fa-address-card"></i> Contato & Links</h3>
                 <div class="contact-list">
                     <a href="tel:+5535997810987"><i class="fa-solid fa-phone"></i> (35) 9 9781-0987</a>
                     <a href="mailto:hudwoody12@gmail.com"><i class="fa-solid fa-envelope"></i> hudwoody12@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/hud-lopes/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/HudsonLopes12" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/hud-lopes/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/HudsonLopes12" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
                 <div class="location-box">
                     <i class="fa-solid fa-location-dot"></i> Machado, MG - Brasil
@@ -63,11 +70,12 @@
             </div>
         </aside>
 
+        <!-- CONTEÚDO PRINCIPAL -->
         <main>
             <section id="sobre" class="card-section">
                 <h2><i class="fa-solid fa-user"></i> Resumo Profissional</h2>
                 <p>
-                    Estudante de Sistemas de Informação no IFSULDEMINAS – Campus Machado, com perfil generalista e interesse em infraestrutura, redes, automação e tecnologia. Experiência com suporte de TI, produção audiovisual e projetos de Robótica/Arduíno.
+                    Estudante de Sistemas de Informação no IFSULDEMINAS – Campus Machado, com perfil generalista e interesse em infraestrutura, redes, automação e tecnologia. Experiência com suporte de TI, produção audiovisual e projetos de Robótica/Arduíno. Possuo facilidade para comunicação técnica, aprendizado contínuo e trabalho em equipe.
                 </p>
             </section>
 
@@ -85,7 +93,7 @@
                         <span class="badge-neutral">2018 - 2020</span>
                         <h3>Estagiário Help Desk - Suporte TI</h3>
                         <p class="company">Axtelecom Ltda</p>
-                        <p class="desc">Suporte técnico, configuração de rede e monitoramento (PRTG, MikroTik, Datacom).</p>
+                        <p class="desc">Suporte técnico, configuração de rede e monitoramento (PRTG, MikroTik, Datacom, OZMap, Integrator).</p>
                     </div>
 
                     <div class="timeline-item">
@@ -107,6 +115,7 @@
                     <span class="tag"><i class="fa-solid fa-network-wired"></i> MikroTik / PRTG</span>
                     <span class="tag"><i class="fa-solid fa-microchip"></i> Arduino / ESP32</span>
                     <span class="tag"><i class="fa-brands fa-git-alt"></i> Git / GitHub</span>
+                    <span class="tag"><i class="fa-solid fa-video"></i> DaVinci Resolve / OBS</span>
                 </div>
             </section>
 
@@ -132,6 +141,11 @@
             </section>
         </main>
     </div>
+
+    <!-- BOTÃO FLUTUANTE PARA SUBIR A PÁGINA -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <footer>
         <p>&copy; 2026 Hudson Lopes | Desenvolvido com HTML, CSS & JavaScript</p>

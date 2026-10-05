@@ -1,8 +1,7 @@
-// 1. GERENCIAMENTO DE TEMA (Com Persistência Local)
+// 1. GERENCIAMENTO DO TEMA (Claro/Escuro)
 const botaoTema = document.querySelector('.theme-toggle');
 const body = document.body;
 
-// Carrega tema salvo anteriormente
 const temaSalvo = localStorage.getItem('tema');
 if (temaSalvo) {
     body.setAttribute('data-theme', temaSalvo);
@@ -18,7 +17,25 @@ botaoTema.addEventListener('click', () => {
     localStorage.setItem('tema', novoTema);
 });
 
-// 2. SCROLLSPY (Ativa o item do menu correspondente à seção visível)
+// 2. BOTÃO VOLTAR AO TOPO (Exibe após rolar a página)
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// 3. SCROLLSPY (Menu com item ativo conforme a rolagem)
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -36,7 +53,7 @@ window.addEventListener('scroll', () => {
 
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('data-section') === currentSection) {
+        if (link.getAttribute('href') === `#${currentSection}`) {
             link.classList.add('active');
         }
     });
