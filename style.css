@@ -1,41 +1,30 @@
 /* ==========================================================================
-   1. VARIÁVEIS DE TEMA (Cores do Corinthians: Preto, Branco e Vermelho)
+   1. VARIÁVEIS DE TEMA & IDENTIDADE VISUAL
    ========================================================================== */
-
-/* Tema Claro (Foco no Branco, textos Pretos e detalhes Vermelhos) */
 :root {
-    --bg-color: #f4f4f4;
-    /* Fundo cinza bem clarinho para dar contraste */
+    --bg-color: #f8f9fa;
     --surface-color: #ffffff;
-    /* Fundo branco puro para os cartões */
-    --text-primary: #000000;
-    /* Preto absoluto para o texto */
-    --text-secondary: #444444;
-    /* Cinza escuro para textos secundários */
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
     --primary-color: #cf0815;
-    /* Vermelho vibrante (Corinthians) para links e destaques */
-    --border-color: #000000;
-    /* Bordas pretas para um visual mais marcante */
+    --primary-hover: #a30610;
+    --border-color: #e0e0e0;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Tema Escuro (Foco no Preto absoluto, textos Brancos e detalhes Vermelhos) */
 [data-theme="dark"] {
-    --bg-color: #000000;
-    /* Fundo preto puro */
-    --surface-color: #111111;
-    /* Preto um pouco mais claro para separar os elementos */
-    --text-primary: #ffffff;
-    /* Branco puro para o texto brilhar no fundo preto */
-    --text-secondary: #cccccc;
-    /* Cinza claro para textos secundários */
+    --bg-color: #0d0d0d;
+    --surface-color: #161616;
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaaaaa;
     --primary-color: #cf0815;
-    /* O mesmo vermelho vibrante mantendo a identidade */
-    --border-color: #cf0815;
-    /* Bordas vermelhas no tema escuro ficam incríveis */
+    --primary-hover: #ff2a37;
+    --border-color: #2a2a2a;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
-   2. RESET BÁSICO E CONFIGURAÇÕES GERAIS
+   2. RESET & REGRAS GERAIS
    ========================================================================== */
 * {
     margin: 0;
@@ -43,32 +32,29 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-html {
-    /* 1. Faz a página deslizar suavemente até a seção em vez de pular direto */
-    scroll-behavior: smooth;
-
-    /* 2. Dá um "desconto" de 100 pixels no topo para o menu não cobrir o título da seção */
-    scroll-padding-top: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ==========================================================================
-   3. BARRA DE NAVEGAÇÃO SUPERIOR (<nav>)
+   3. BARRA DE NAVEGAÇÃO
    ========================================================================== */
 nav {
     background-color: var(--surface-color);
     border-bottom: 3px solid var(--primary-color);
-    /* Uma faixa vermelha no topo para dar estilo */
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: var(--card-shadow);
 }
 
 .nav-container {
@@ -81,9 +67,9 @@ nav {
 }
 
 .nav-brand h1 {
+    font-size: 1.4rem;
     font-weight: 800;
     text-transform: uppercase;
-    /* Deixa o nome todo em MAIÚSCULO para dar peso */
     letter-spacing: 1px;
 }
 
@@ -96,11 +82,10 @@ nav {
 .nav-menu a {
     text-decoration: none;
     color: var(--text-primary);
-    font-weight: bold;
-    /* Links mais gordinhos */
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: color 0.2s;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
 }
 
 .nav-menu a:hover,
@@ -111,12 +96,17 @@ nav {
 .theme-toggle {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.15);
 }
 
 /* ==========================================================================
-   4. LAYOUT PRINCIPAL
+   4. LAYOUT
    ========================================================================== */
 .layout-container {
     max-width: 1200px;
@@ -128,109 +118,191 @@ nav {
 }
 
 /* ==========================================================================
-   5. BARRA LATERAL (Perfil / Aside)
+   5. ASIDE (PERFIL)
    ========================================================================== */
 aside {
     background-color: var(--surface-color);
     padding: 2rem;
-    border-radius: 8px;
-    /* Bordas um pouco mais quadradas, visual mais agressivo */
+    border-radius: 12px;
     border: 1px solid var(--border-color);
-    /* Linha ao redor do perfil */
+    box-shadow: var(--card-shadow);
     height: fit-content;
+    position: sticky;
+    top: 100px;
 }
 
 .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 8px;
-    /* Deixei 8px para dar uma leve suavizada nas quinas (combina com os cartões). Se quiser um quadrado "seco", troque para 0 */
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
     object-fit: cover;
     display: block;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.2rem;
     border: 4px solid var(--primary-color);
 }
 
 .profile h2 {
     text-align: center;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
 }
 
 .subtitle {
     text-align: center;
     margin-bottom: 1.5rem;
-    font-weight: bold;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--primary-color);
-    /* Subtítulo em vermelho */
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
 }
 
 .contact a {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     text-decoration: none;
     color: var(--text-primary);
-    margin-bottom: 0.8rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
 }
 
 .contact a:hover {
     color: var(--primary-color);
 }
 
-.location {
-    margin-top: 1.5rem;
+.contact .icon {
+    color: var(--primary-color);
+    width: 18px;
     text-align: center;
-    font-weight: bold;
+}
+
+.location {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
 }
 
 /* ==========================================================================
-   6. CONTEÚDO PRINCIPAL E SEÇÕES (Main)
+   6. CONTEÚDO PRINCIPAL (MAIN)
    ========================================================================== */
-section {
+.card-section {
     background-color: var(--surface-color);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 2rem;
     border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
 }
 
-section h2 {
+.card-section h2 {
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     border-bottom: 3px solid var(--primary-color);
-    /* Linha vermelha grossa abaixo dos títulos */
     padding-bottom: 0.5rem;
     text-transform: uppercase;
+    font-size: 1.25rem;
     font-weight: 800;
 }
 
 .timeline-item {
     margin-bottom: 1.5rem;
-    padding-left: 1rem;
-    border-left: 4px solid var(--primary-color);
-    /* Linha vermelha do lado da experiência */
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--primary-color);
 }
 
 .timeline-item h3 {
-    color: var(--text-primary);
+    font-size: 1.1rem;
 }
 
-.company,
-.institution {
-    font-weight: bold;
+.company, .institution {
+    font-weight: 600;
     color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.period {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .skill-category h3 {
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
     color: var(--primary-color);
+}
+
+.languages h3 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+}
+
+.subsection-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.project-item {
+    margin-bottom: 1.2rem;
+}
+
+.project-item h4 {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.certifications {
+    margin-top: 1.5rem;
+}
+
+.certifications h3 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.certifications ul {
+    padding-left: 1.2rem;
+}
+
+.portfolio-link {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-portfolio {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-portfolio:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -243,16 +315,23 @@ footer {
     background-color: var(--surface-color);
     border-top: 3px solid var(--primary-color);
     margin-top: 2rem;
+    font-size: 0.9rem;
 }
 
 /* ==========================================================================
-   8. RESPONSIVIDADE (Celular)
+   8. RESPONSIVIDADE
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .layout-container {
         grid-template-columns: 1fr;
     }
 
+    aside {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
     .nav-container {
         flex-direction: column;
         gap: 1rem;
@@ -261,5 +340,6 @@ footer {
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
     }
 }

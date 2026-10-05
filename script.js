@@ -1,25 +1,43 @@
-// 1. SELEÇÃO DE ELEMENTOS
-// Agora buscamos o botão pela CLASSE que você colocou no HTML
+// 1. GERENCIAMENTO DE TEMA (Com Persistência Local)
 const botaoTema = document.querySelector('.theme-toggle');
 const body = document.body;
 
-// 2. CRIANDO A AÇÃO (Ouvinte de Eventos)
-botaoTema.addEventListener('click', function () {
+// Carrega tema salvo anteriormente
+const temaSalvo = localStorage.getItem('tema');
+if (temaSalvo) {
+    body.setAttribute('data-theme', temaSalvo);
+    botaoTema.textContent = temaSalvo === 'dark' ? '☀️' : '🌙';
+}
 
-    // 3. A LÓGICA PRINCIPAL (Verificando o atributo data-theme)
-    // Pega o valor atual do tema (light ou dark)
+botaoTema.addEventListener('click', () => {
     const temaAtual = body.getAttribute('data-theme');
-
-    // 4. TROCA O TEMA E O ÍCONE
-    if (temaAtual === 'light') {
-        // Se for claro, muda para escuro e altera o emoji
-        body.setAttribute('data-theme', 'dark');
-        botaoTema.textContent = '☀️';
-    } else {
-        // Se já for escuro, volta para o claro e altera o emoji
-        body.setAttribute('data-theme', 'light');
-        botaoTema.textContent = '🌙';
-    }
+    const novoTema = temaAtual === 'light' ? 'dark' : 'light';
+    
+    body.setAttribute('data-theme', novoTema);
+    botaoTema.textContent = novoTema === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('tema', novoTema);
 });
 
+// 2. SCROLLSPY (Ativa o item do menu correspondente à seção visível)
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
 
+window.addEventListener('scroll', () => {
+    let currentSection = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === currentSection) {
+            link.classList.add('active');
+        }
+    });
+});
