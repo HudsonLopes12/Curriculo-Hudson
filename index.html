@@ -62,8 +62,8 @@
                 <h3><i class="fa-solid fa-address-card"></i> Contato & Links</h3>
                 <div class="contact-list">
                     <a href="tel:+5535997810987"><i class="fa-solid fa-phone"></i> (35) 9 9781-0987</a>
-                    <!-- E-MAIL ALTERADO ABAIXO -->
-                    <a href="mailto:hudson.lopes@alunos.ifsuldeminas.edu.br"><i class="fa-solid fa-envelope"></i> hudson.lopes@alunos.ifsuldeminas.edu.br</a>
+                    <!-- CLASSE email-link ADICIONADA ABAIXO -->
+                    <a href="mailto:hudson.lopes@alunos.ifsuldeminas.edu.br" class="email-link"><i class="fa-solid fa-envelope"></i> hudson.lopes@alunos.ifsuldeminas.edu.br</a>
                     <a href="https://www.linkedin.com/in/hud-lopes/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                     <a href="https://github.com/HudsonLopes12" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
                     <a href="https://www.instagram.com/wudyson12/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
@@ -197,6 +197,16 @@
                         Preparar e-mail <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </button>
                 </form>
+
+                <!-- ÁREA COM BOTÃO DE RASCUNHO E AVISO INFORMATIVO -->
+                <div id="emailResult" style="display: none; margin-top: 1.5rem;">
+                    <a id="mailToLink" href="#" class="btn btn-secondary" style="margin-bottom: 1rem; width: 100%; justify-content: center; background-color: var(--card-bg); border-color: var(--border-color);">
+                        Abrir rascunho no aplicativo de e-mail <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <p style="padding: 0.8rem; background-color: rgba(16, 185, 129, 0.15); border-left: 4px solid #10b981; color: var(--text-primary); font-size: 0.85rem; border-radius: 4px;">
+                        Rascunho preparado. Nada foi enviado. Use o link para abrir seu aplicativo de e-mail e concluir o envio por lá.
+                    </p>
+                </div>
             </section>
         </main>
     </div>

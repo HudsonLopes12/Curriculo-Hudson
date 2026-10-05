@@ -69,8 +69,10 @@ if (mensagemInput && charCount) {
     });
 }
 
-// 5. ENVIO DO FORMULÁRIO (GERAR RASCUNHO DE E-MAIL)
+// 5. ENVIO DO FORMULÁRIO (EXIBIR BOTÃO DE RASCUNHO E AVISO)
 const contactForm = document.getElementById('contactForm');
+const emailResult = document.getElementById('emailResult');
+const mailToLink = document.getElementById('mailToLink');
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -81,10 +83,14 @@ if (contactForm) {
         const assunto = document.getElementById('assunto').value;
         const mensagem = document.getElementById('mensagem').value;
 
-        const meuEmail = 'hudwoody12@gmail.com';
+        const meuEmail = 'hudson.lopes@alunos.ifsuldeminas.edu.br';
         const subject = encodeURIComponent(`[Contato Site] ${assunto} - ${nome}`);
         const body = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\nAssunto: ${assunto}\n\nMensagem:\n${mensagem}`);
 
-        window.location.href = `mailto:${meuEmail}?subject=${subject}&body=${body}`;
+        // Atualiza o link mailto no botão dinâmico
+        mailToLink.href = `mailto:${meuEmail}?subject=${subject}&body=${body}`;
+
+        // Exibe o contêiner com o botão de rascunho e a mensagem verde
+        emailResult.style.display = 'block';
     });
 }
