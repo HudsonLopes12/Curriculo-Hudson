@@ -285,12 +285,16 @@ aside h3 {
     color: var(--text-primary);
     font-size: 0.9rem;
     transition: color 0.2s ease;
+    /* ALTERAÇÕES ADICIONADAS ABAIXO PARA O E-MAIL NÃO ULTRAPASSAR O MENU */
+    word-break: break-all;
+    overflow-wrap: anywhere;
 }
 
 .contact-list a i {
     color: var(--primary-color);
     width: 18px;
     text-align: center;
+    flex-shrink: 0; /* Impede que o ícone diminua de tamanho com a quebra de linha */
 }
 
 .contact-list a:hover {
