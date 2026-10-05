@@ -4,153 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hudson Lopes - Currículo & Portfólio</title>
+    <title>Hudson Lopes | Desenvolvedor & Sistemas de Informação</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome para ícones modernos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body data-theme="light">
+<body data-theme="dark">
 
-    <!-- NAV: Barra de Navegação Fixa -->
-    <nav id="nav" aria-label="Navegação principal">
+    <nav id="nav">
         <div class="nav-container">
             <div class="nav-brand">
-                <h1>Hudson Lopes</h1>
+                <h1>Hudson Lopes<span>.</span></h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#resumo" data-section="resumo" class="nav-link active">Sobre</a></li>
-                <li><a href="#formacao" data-section="formacao" class="nav-link">Formação</a></li>
-                <li><a href="#experiencia" data-section="experiencia" class="nav-link">Experiência</a></li>
-                <li><a href="#habilidades" data-section="habilidades" class="nav-link">Habilidades</a></li>
-                <li><a href="#projetos" data-section="projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#sobre" class="nav-link active">Sobre</a></li>
+                <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
             </ul>
-            <button class="theme-toggle" aria-label="Alternar tema">🌙</button>
+            <button class="theme-toggle">☀️</button>
         </div>
     </nav>
 
-    <!-- LAYOUT PRINCIPAL -->
-    <div class="layout-container">
-
-        <!-- ASIDE: Barra Lateral de Perfil -->
-        <aside aria-label="Informações pessoais">
-            <div class="profile">
-                <img src="Hudson-Foto-Perfil.png" alt="Foto profissional de Hudson Lopes" class="profile-img">
-                <h2>Hudson Mauro Lopes Filho</h2>
-                <p class="subtitle">Estudante de Sistemas de Informação | Desenvolvedor Back-End</p>
-
-                <div class="contact">
-                    <a href="tel:+5535997810987" title="Telefone">
-                        <i class="fa-solid fa-phone icon"></i>
-                        <span>(35) 9 9781-0987</span>
-                    </a>
-                    <a href="mailto:hudwoody12@gmail.com" title="Email">
-                        <i class="fa-solid fa-envelope icon"></i>
-                        <span>hudwoody12@gmail.com</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/hud-lopes/" target="_blank" rel="noopener" title="LinkedIn">
-                        <i class="fa-brands fa-linkedin icon"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/HudsonLopes12" target="_blank" rel="noopener" title="GitHub">
-                        <i class="fa-brands fa-github icon"></i>
-                        <span>GitHub</span>
-                    </a>
+    <header class="hero-section">
+        <div class="hero-container">
+            <div class="hero-avatar">
+                <img src="Hudson-Foto-Perfil.png" alt="Foto de Hudson Lopes">
+                <span class="status-badge"><i class="fa-solid fa-circle"></i> Disponível para oportunidades</span>
+            </div>
+            <div class="hero-content">
+                <p class="greeting">Olá, meu nome é</p>
+                <h1 class="hero-title">Hudson Mauro Lopes Filho</h1>
+                <h2 class="hero-subtitle">Estudante de Sistemas de Informação & Dev Back-End</h2>
+                <p class="hero-description">
+                    Entusiasta de tecnologia, redes, automação e infraestrutura. Desenvolvendo soluções no IFSULDEMINAS.
+                </p>
+                <div class="hero-buttons">
+                    <a href="mailto:hudwoody12@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Fale Comigo</a>
+                    <a href="https://github.com/HudsonLopes12" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
-                <p class="location"><i class="fa-solid fa-location-dot"></i> Machado, Minas Gerais, Brasil</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside>
+            <div class="info-card">
+                <h3><i class="fa-solid fa-address-card"></i> Contato</h3>
+                <div class="contact-list">
+                    <a href="tel:+5535997810987"><i class="fa-solid fa-phone"></i> (35) 9 9781-0987</a>
+                    <a href="mailto:hudwoody12@gmail.com"><i class="fa-solid fa-envelope"></i> hudwoody12@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/hud-lopes/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/HudsonLopes12" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+                <div class="location-box">
+                    <i class="fa-solid fa-location-dot"></i> Machado, MG - Brasil
+                </div>
             </div>
         </aside>
 
-        <!-- MAIN: Conteúdo Principal -->
         <main>
-            <section id="resumo" class="card-section">
-                <h2>Resumo Profissional</h2>
-                <p>Estudante de Sistemas de Informação no IFSULDEMINAS – Campus Machado, com perfil generalista e interesse em infraestrutura, redes, automação e tecnologia. Experiência com suporte de TI, produção audiovisual e projetos de Robótica/Arduíno. Possuo facilidade para comunicação técnica, aprendizado contínuo e trabalho em equipe, buscando oportunidades para aplicar e desenvolver meus conhecimentos na área de tecnologia. 🚀</p>
-            </section>
-
-            <section id="formacao" class="card-section">
-                <h2>Formação Acadêmica</h2>
-                <div class="timeline-item">
-                    <h3>Sistemas de Informação</h3>
-                    <p class="institution">Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas - Campus Machado</p>
-                    <p class="period"><i class="fa-regular fa-calendar"></i> Atualmente - 4º período</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Licenciatura em Computação</h3>
-                    <p class="institution">Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas - Campus Machado</p>
-                    <p class="period"><i class="fa-regular fa-calendar"></i> Incompleto</p>
-                </div>
+            <section id="sobre" class="card-section">
+                <h2><i class="fa-solid fa-user"></i> Resumo Profissional</h2>
+                <p>
+                    Estudante de Sistemas de Informação no IFSULDEMINAS – Campus Machado, com perfil generalista e interesse em infraestrutura, redes, automação e tecnologia. Experiência com suporte de TI, produção audiovisual e projetos de Robótica/Arduíno.
+                </p>
             </section>
 
             <section id="experiencia" class="card-section">
-                <h2>Experiência Profissional</h2>
-                <div class="timeline-item">
-                    <h3>Estagiário</h3>
-                    <p class="company">DPPI - IFSULDEMINAS - Campus Machado | Atualmente</p>
-                    <p>Atendimento a educandos, devolutivas de e-mail e WhatsApp, gravação e edição de vídeos no Estúdio Audiovisual IFSULDEMINAS - Campus Machado.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Estagiário Help Desk - Suporte TI</h3>
-                    <p class="company">Axtelecom Ltda | 2018 - 2020</p>
-                    <p>Suporte técnico a clientes, configuração e teste de equipamentos de rede, monitoramento de infraestrutura usando PRTG, DMView, Datacom, MikroTik, OZMap e Integrator. Apoio em manutenção e gerenciamento de redes.</p>
+                <h2><i class="fa-solid fa-briefcase"></i> Experiência & Formação</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="badge">Atualmente</span>
+                        <h3>Estagiário</h3>
+                        <p class="company">DPPI - IFSULDEMINAS Campus Machado</p>
+                        <p class="desc">Atendimento a educandos, comunicação e produção de vídeos no Estúdio Audiovisual.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="badge-neutral">2018 - 2020</span>
+                        <h3>Estagiário Help Desk - Suporte TI</h3>
+                        <p class="company">Axtelecom Ltda</p>
+                        <p class="desc">Suporte técnico, configuração de rede e monitoramento (PRTG, MikroTik, Datacom).</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="badge">4º Período</span>
+                        <h3>Sistemas de Informação</h3>
+                        <p class="company">IFSULDEMINAS Campus Machado</p>
+                    </div>
                 </div>
             </section>
 
             <section id="habilidades" class="card-section">
-                <h2>Habilidades Técnicas</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fa-solid fa-code"></i> Linguagens</h3>
-                        <p>C#, HTML, JavaScript, Java</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fa-solid fa-database"></i> Bancos de Dados</h3>
-                        <p>Modelagem e Consultas SQL (Disciplinas I e II - IFSULDEMINAS)</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fa-solid fa-wrench"></i> Ferramentas</h3>
-                        <p>Git/GitHub, VSCode</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fa-solid fa-cubes"></i> Tecnologias & Outros</h3>
-                        <p>API REST, Arduino/ESP32, MikroTik, PRTG, DaVinci Resolve, OBS Studio</p>
-                    </div>
-                </div>
-
-                <div class="languages">
-                    <h3><i class="fa-solid fa-language"></i> Idiomas</h3>
-                    <p>Português (Nativo) • Espanhol (Iniciante I)</p>
+                <h2><i class="fa-solid fa-gears"></i> Habilidades Técnicas</h2>
+                <div class="skills-tags">
+                    <span class="tag"><i class="fa-solid fa-code"></i> C#</span>
+                    <span class="tag"><i class="fa-brands fa-html5"></i> HTML / CSS</span>
+                    <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span class="tag"><i class="fa-brands fa-java"></i> Java</span>
+                    <span class="tag"><i class="fa-solid fa-database"></i> SQL / Bancos de Dados</span>
+                    <span class="tag"><i class="fa-solid fa-network-wired"></i> MikroTik / PRTG</span>
+                    <span class="tag"><i class="fa-solid fa-microchip"></i> Arduino / ESP32</span>
+                    <span class="tag"><i class="fa-brands fa-git-alt"></i> Git / GitHub</span>
                 </div>
             </section>
 
             <section id="projetos" class="card-section">
-                <h2>Projetos & Certificações</h2>
-
-                <h3 class="subsection-title">Projetos</h3>
-                <div class="project-item">
-                    <h4>🏭 Smart Campus Machado</h4>
-                    <p>Projeto em desenvolvimento para a JOSIF, buscando soluções inteligentes para o ambiente acadêmico.</p>
-                </div>
-                <div class="project-item">
-                    <h4>🔐 GAPE AUTOBOTS - Robótica IFSULDEMINAS</h4>
-                    <p>Grupo de Estudos e Robótica Aplicada AUTOBOTS, desenvolvendo habilidades em programação e eletrônica.</p>
-                </div>
-                <div class="project-item">
-                    <h4>📊 FecTeC</h4>
-                    <p>Atuação como Avaliador de Projetos.</p>
-                </div>
-                
-                <div class="certifications">
-                    <h3><i class="fa-solid fa-certificate"></i> Certificados</h3>
-                    <ul>
-                        <li>Ferramentas de Trabalho do Google EAD - IFSULDEMINAS - Campus Machado</li>
-                    </ul>
-                </div>
-
-                <div class="portfolio-link">
-                    <a href="https://github.com/HudsonLopes12" target="_blank" rel="noopener" class="btn-portfolio">
-                        <i class="fa-brands fa-github"></i> Ver Portfólio Completo no GitHub
-                    </a>
+                <h2><i class="fa-solid fa-rocket"></i> Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>🏭 Smart Campus Machado</h3>
+                        <p>Projeto em desenvolvimento para a JOSIF 2026 com soluções inteligentes acadêmicas.</p>
+                        <span class="project-tag">IoT / Automação</span>
+                    </div>
+                    <div class="project-card">
+                        <h3>🔐 GAPE AUTOBOTS</h3>
+                        <p>Grupo de estudos de robótica aplicando programação e eletrônica.</p>
+                        <span class="project-tag">Robótica</span>
+                    </div>
+                    <div class="project-card">
+                        <h3>📊 FecTeC</h3>
+                        <p>Avaliador de Projetos da Feira de Ciências e Tecnologia.</p>
+                        <span class="project-tag">Avaliação</span>
+                    </div>
                 </div>
             </section>
         </main>
