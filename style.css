@@ -413,6 +413,52 @@ aside h3 {
     box-shadow: 0 4px 12px var(--accent-glow);
 }
 
+/* IDIOMAS */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+}
+
+.language-card {
+    background-color: var(--card-bg);
+    padding: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+}
+
+.language-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.language-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.language-info h3 {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.language-level {
+    font-size: 0.75rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.institution {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
 /* PROJETOS GRID */
 .projects-grid {
     display: grid;
